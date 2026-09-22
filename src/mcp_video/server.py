@@ -17,7 +17,7 @@ from mcp_video.video import (
 
 mcp = FastMCP(
     "mcp-video",
-    description="Video intelligence MCP server - analyze any video with AI vision",
+    instructions="Video intelligence MCP server - analyze any video with AI vision",
     host="0.0.0.0",
     port=int(os.environ.get("PORT", "8000")),
     streamable_http_path="/mcp",
