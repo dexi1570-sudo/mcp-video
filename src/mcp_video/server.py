@@ -1,5 +1,6 @@
 """MCP Video server - expose video intelligence tools via MCP."""
 
+import os
 import tempfile
 from pathlib import Path
 
@@ -17,6 +18,9 @@ from mcp_video.video import (
 mcp = FastMCP(
     "mcp-video",
     description="Video intelligence MCP server - analyze any video with AI vision",
+    host="0.0.0.0",
+    port=int(os.environ.get("PORT", "8000")),
+    streamable_http_path="/mcp",
 )
 
 
@@ -322,7 +326,7 @@ def _fmt_duration(seconds: int) -> str:
 
 
 def main():
-    mcp.run()
+    mcp.run(transport="streamable-http")
 
 
 if __name__ == "__main__":

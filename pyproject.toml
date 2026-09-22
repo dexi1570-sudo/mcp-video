@@ -27,7 +27,7 @@ classifiers = [
 ]
 
 dependencies = [
-    "mcp>=1.0.0",
+    "mcp>=1.0.0,<2.0.0",
     "yt-dlp>=2024.0.0",
     "opencv-python-headless>=4.8.0",
     "Pillow>=10.0.0",
